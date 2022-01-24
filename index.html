@@ -258,11 +258,12 @@
 
                     <h3>Consultas</h3>
 
-                    <form class="contact-form">
+                    <form class="contact-form" action="correo.php" method="post">
 
-                        <input class="contact-form__item" type="text" placeholder="Nombre (requerido)" required>
-                        <input class="contact-form__item" type="email" placeholder="E-mail (requerido)" required>
-                        <input class="contact-form__item" type="tel" placeholder="Teléfono (Ingresar números sin guiones)">
+                        <input class="contact-form__item" type="text" name="nombre" placeholder="Nombre (requerido)" required>
+                        <input class="contact-form__item" type="email" name="email" placeholder="E-mail (requerido)" required>
+                        <input class="contact-form__item" type="text" name="asunto" placeholder="Asunto (requerido)" required>
+                        <input class="contact-form__item" type="tel" name="telefono" placeholder="Teléfono (Ingresar números sin guiones)">
         
                         <select class="contact-form__item">
                             <option value="placeholder">Seleccione el área a contactar...</option>
@@ -272,9 +273,9 @@
                             <option value="administración">Consultas administrativas</option>
                         </select>
         
-                        <textarea class="contact-form__item" placeholder="Escriba su mensaje" required></textarea>
+                        <textarea class="contact-form__item" name="mensaje" placeholder="Escriba su mensaje..." required></textarea>
                         <div class="g-recaptcha" data-sitekey="6LdM4UodAAAAAG0I3OiALHgqWu6_5CAIMdRI_PDj"></div>
-                        <button class="contact-form__button" onclick="validarFormuario()" type="submit">Enviar consulta</button>
+                        <button class="contact-form__button" type="submit">Enviar consulta</button>
                     </form>
 
                 </div>
