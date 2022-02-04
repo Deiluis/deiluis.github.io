@@ -85,6 +85,7 @@
     padding: 50px 0;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .nivel-objetivos h2 {
@@ -92,10 +93,6 @@
     color: #101;
     font-size: 25px;
     margin-bottom: 15px;
-}
-
-.nivel-objetivos div {
-    width: 40%;
 }
 
 .nivel-objetivos-right {
@@ -157,4 +154,18 @@
 
 .consulta-vacantes a:hover {
     background-color: #f50;
+}
+
+@media screen and (max-width: 1600px) {
+
+    .nivel-objetivos {
+        justify-content: flex-start;
+        padding-left: 10%;
+        padding-right: 7%;
+    }
+
+    .nivel-objetivos-right {
+        margin-top: 0;
+    }
+    
 }

@@ -8,9 +8,9 @@ const moverAPag1 = () => {
     novedadesPag1.style.transform = "translateX(0)";
     novedadesPag2.style.transform = "translateX(0)";
     
-    buttonPag1.style.border = "3px #d70 solid";
+    buttonPag1.style.border = "0.3rem #d70 solid";
     buttonPag1.style.backgroundColor = "#d90";
-    buttonPag2.style.border = "3px #bbb solid";
+    buttonPag2.style.border = "0.3rem #bbb solid";
     buttonPag2.style.backgroundColor = "#ddd";
 }
     
@@ -20,9 +20,9 @@ const moverAPag2 = () => {
     novedadesPag2.style.transform = "translateX(-100%)";
     novedadesPag2.style.transition = "transform 1s";
     
-    buttonPag1.style.border = "3px #bbb solid";
+    buttonPag1.style.border = "0.3rem #bbb solid";
     buttonPag1.style.backgroundColor = "#ddd";
-    buttonPag2.style.border = "3px #d70 solid";
+    buttonPag2.style.border = "0.3rem #d70 solid";
     buttonPag2.style.backgroundColor = "#d90";
 }
 

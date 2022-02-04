@@ -1,101 +1,116 @@
+:root {
+    --color-blanco: #fff;
+    --color-negro: #222;
+    --color-fondo: #ddd;
+    --color-azul-oscuro: #107;
+    --color-azul-oscuro-alt: #104;
+    --color-amarillo: #d90;
+    --color-naranja-claro: #d70;
+    --color-naranja: #d50;
+    --color-naranja-alt: #f50;
+    --color-violeta: #373683;
+    --color-rojo: #c81f13;
+}
+
 html {
     scroll-behavior: smooth;
+    font-size: 62.5%;
+    border: none;
+    outline: none;
 }
 
 body {
-    background: #ddd;
+    background: var(--color-fondo);
 }
 
 /*Todas las propiedades del div con el contacto y las redes sociales*/
 
-.header-info {
+.header__info {
     display: flex;
-    width: 100%;
-    min-height: 5%;
-    padding: 7px;
-    background: #ddd;
-    justify-content: space-around;
     flex-wrap: wrap;
+    width: 100%;
+    min-height: 5rem;
+    background: var(--color-fondo);
+    justify-content: space-around;
+
+    position: relative;
+    top: 0;
+    z-index: 30;
 }
 
-.header-contact-info {
+.header__contact {
     display: flex; 
     list-style: none;
     align-items: center;
 }
 
-.header-contact-info__item {
-    margin-right: 20px;
+.header__contact-item {
+    margin: 0 1rem;
 }
 
-.header-contact-info__item a {
-    color: #107;
-    font-size: 13px;
+.header__contact-link {
+    color: var(--color-azul-oscuro);
+    font-size: 1.3rem;
     text-decoration: none;
     font-family: "Roboto", sans-serif;
 }
 
-.header-social-media {
+.header__contact-icon {
+    font-size: 1.3rem;
+}
+
+.header__social-media {
     display: flex;
     list-style: none;
-    font-size: 30px;
-    align-items: flex-end;
+    align-items: center;
 }
 
-.header-social-media__item {
-    margin-left: 5px;
-    margin-right: 5px;
+.header__social-media-item {
+    margin: 0 0.5rem;
 }
 
-.header-social-media__item i {
-    color: #107;
+.social-media__icon {
+    color: var(--color-azul-oscuro);
     transition: transform 0.5s;
+    font-size: 3rem;
 }
 
-.header-social-media__item i:hover {
+.social-media__icon:hover {
     transform: translateY(-7px);
-}
-
-.header-vacantes {
-    background-color: #d70;
-    color: #fff;
-    text-decoration: none;
-    align-self: center;
-    font-size: 17px;
-    font-family: "Roboto", sans-serif;
-    padding: 5px 20px;
-    border-radius: 20px;
-    transition: background-color 0.5s;
-}
-
-.header-vacantes:hover {
-    background-color: #f50;
 }
 
 /*Todas las propiedades del nav base*/
 .nav {
     display: flex;
     width: 100%;
-    background-color: #fff;
-    justify-content: space-around;
+    min-height: 12%;
+    background-color: var(--color-blanco);
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    box-shadow: 0 0.05rem 1rem var(--color-negro);
+}
+
+.nav__repsonsive-div {
+    display: flex;
+    background-color: var(--color-blanco);
+    justify-content: space-evenly;
 }
 
 /*Todas las propiedades del div que contiene al logo y el texto del ISFD*/
-.nav__logo {
+.nav__logo-link {
+    text-decoration: none;
     display: flex;
-    height: 100px;
     align-items: center;
 }
 
-.nav__logo img {
-    height: 75%;
-    margin: 20px;
+.nav__img {
+    height: 7rem;
+    margin: 2rem;
 }
 
-.nav__logo h1 {
+.nav__title {
     font-family: "Roboto", sans-serif;
-    font-size: 27px;
+    font-size: 3rem;
     color: #107;
 }
 
@@ -105,28 +120,31 @@ body {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin-right: 30px;
-    margin-bottom: 20px;
+    margin: 0 1.5rem 2rem 1.5rem;
     align-items: flex-end;
 }
 
-.options-bar__item {
+.nav__item {
     margin: 0 15px;
     font-family: "Roboto", sans-serif;
 }
 
-.options-bar__item a {
+.nav__link {
     text-decoration: none;
-    color: #107;
-    padding: 2px;
+    color: var(--color-azul-oscuro);
+    padding: 0.2rem;
+    font-size: 1.7rem;
     font-weight: bold;
-    border-bottom: #fff;
-    transition: color, border-bottom 0.2s;
+    transition: color, border-bottom, 0.2s;
 }
 
-.options-bar__item a:hover {
-    color: #d90;
-    border-bottom: #d90 3px solid;
+.nav__link:hover {
+    color: var(--color-amarillo);
+    border-bottom: 0.3rem solid var(--color-amarillo);
+}
+
+.nav__menu-button {
+    display: none;
 }
 
 /*Todas las propiedades del indice final*/
@@ -137,94 +155,250 @@ body {
     align-items: center;
 }
 
-.index-logo__container {
+.index__logo {
     width: 10%;
-    margin-right: 30px;
+    margin-right: 3rem;
 }
 
-.index-lists__container {
-    margin: 30px;
+.index__lists-container {
+    margin: 3rem;
 }
 
-.index-lists__container {
-    margin: 30px;
+.index__title {
+    font-size: 2.5rem;
+    color: var(--color-azul-oscuro-alt);
+    margin: 0.5rem 0;
 }
 
-.index-lists__container h3 {
-    font-family: "Roboto", sans-serif;
-    font-size: 25px;
-    color: #104;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.index__ul {
+.index__list {
     list-style: none;
 }
 
 .index__item {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #888;
+    padding: 1rem 0;
+    border-bottom: 0.1rem solid #888;
 }
 
-.index__item:last-child {
+.index__item--borderless {
     border-bottom: none;
 }
 
-.index__item a {
+.index__link {
     text-decoration: none;
     font-family: "Roboto", sans-serif;
     color: #f50;
-    letter-spacing: 1px;
-    font-size: 17px;
+    letter-spacing: 0.1rem;
+    font-size: 1.7rem;
     transition: color 0.5s;
 }
 
-.index__item a:hover {
-    color: #c81f13;
+.index__link:hover {
+    color: var(--color-rojo);
 }
 
-.footer__container {
+.footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: #373683;
-    height: 150px;
+    min-height: 20vh;
 }
 
-.info-programador p {
-    color: #fff;
+.footer__programador-text {
+    color: var(--color-blanco);
     font-family: "Roboto", sans-serif;
     font-size: 17px;
 }
 
-.info-programador a {
-    color: #fff;
+.footer__link {
+    color: var(--color-fondo);
     text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    padding: 0 2rem;
+}
+
+.footer__link--bigger {
     font-family: "Dancing Script", cursive;
     font-size: 50px;
     font-weight: bolder;
 }
 
-.info-extra a {
-    color: #fff;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    font-size: 17px;
-    padding-left: 20px;
-    padding-right: 20px;
+.footer__link--with-border {
+    border-left: 0.2rem solid var(--color-blanco);
+    border-right: 0.2rem solid var(--color-blanco);
 }
 
-.info-extra a:nth-child(2) {
-    border-left: 2px solid #fff;
-    border-right: 2px solid #fff;
+.footer__data-fiscal {
+    width: 200px;
 }
 
-.data-fiscal {
-    height: 60%;
+
+
+
+/*Media queries*/
+
+@media screen and (min-width: 860px) {
+    .nav__menu-button {
+        display: none;
+        color: var(--color-blanco);
+    }
 }
 
-.data-fiscal img {
-    height: 100%;
+
+@media screen and (max-width: 860px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .header__contact {
+        display: none;
+    }
+
+    .button {
+        font-size: 2.3rem;
+        padding: 0.7rem 4rem;
+    }
+
+    .header__info {
+        min-height: 7rem;
+    }
+
+    .header__social-media-item {
+        margin: 0 0.7rem;
+    }
+
+    .social-media__icon {
+        font-size: 4rem;
+    }
+
+    .nav {
+        flex-wrap: nowrap;
+        box-shadow: none;
+    }
+
+    .nav__repsonsive-div {
+        width: 100%;
+        box-shadow: 0 0.05rem 1rem var(--color-negro);
+
+        position: relative;
+        z-index: 20;
+    }
+
+    .nav__menu-button {
+        display: inline-block;
+        align-self: center;
+        font-size: 3.5rem;
+        margin: 2.5rem;
+    }
+
+    .nav__options-bar {
+        background: var(--color-blanco);
+        width: 100%;
+        height: auto;
+        margin: 0;
+
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+        
+
+        position: absolute;
+        top: -40vh;
+        z-index: 10;
+        transition: top 1s;
+    }
+
+    .nav__options-bar--show {
+        top: 18rem;
+    }
+
+    .nav__item {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav__link {
+        display: block;
+        padding: 2.5rem 0;
+        transition: background 0.3s;
+    }
+
+    .nav__link:hover {
+        background: var(--color-fondo);
+        border: transparent;
+        color: var(--color-azul-oscuro);
+    }
+
+    .index {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer__programador,
+    .footer__info-extra,
+    .footer__data-fiscal {
+        margin: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .header__social-media {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 335px) {
+
+    .nav__options-bar--show {
+        top: 21rem
+    }
+
+    .footer__info-extra {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer__link {
+        margin: 1.5rem 0;
+        border: none;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 313px) {
+    
+    .nav__options-bar--show {
+        top: 25rem
+    }
+}
+
+@media screen and (max-width: 860px) and (orientation: landscape) {
+
+    .nav__options-bar {
+        display: inline-block;
+    }
+
+    .nav__item {
+        float: left;
+        padding: 0;
+        margin: 0;
+        width: 50%;
+    }
+
+    .nav__link {
+        display: inline-block;
+        width: 100%;
+    }
 }
