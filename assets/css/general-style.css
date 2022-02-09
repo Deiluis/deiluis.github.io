@@ -1,26 +1,63 @@
 :root {
     --color-blanco: #fff;
-    --color-negro: #222;
+    --color-gris-e: #eee;
     --color-fondo: #ddd;
+    --color-gris-claro: #bbb;
+    --color-gris: #888;
+    --color-negro: #222;
+
     --color-azul-oscuro: #107;
     --color-azul-oscuro-alt: #104;
+    --color-azul-opaco: #0c2147;
+
     --color-amarillo: #d90;
     --color-naranja-claro: #d70;
     --color-naranja: #d50;
     --color-naranja-alt: #f50;
+    --color-naranja-oscuro: #d508;
+    --color-naranja-oscuro-alt: #c50;
+    
     --color-violeta: #373683;
     --color-rojo: #c81f13;
-}
+    --color-whatsapp: #0df053;
 
-html {
-    scroll-behavior: smooth;
     font-size: 62.5%;
-    border: none;
-    outline: none;
+    scroll-behavior: smooth;
 }
 
 body {
     background: var(--color-fondo);
+    font-family: "Roboto", sans-serif;
+    border: none;
+    outline: none;
+}
+
+.button {
+    background-color: var(--color-naranja-claro);
+    color: var(--color-blanco);
+    text-decoration: none;
+    align-self: center;
+    font-size: 17px;
+    padding: 7px 20px;
+    border-radius: 20px;
+    border: none;
+    transition: background 0.5s;
+}
+
+.button:hover {
+    background: var(--color-naranja-alt);
+}
+
+.button--larger {
+    padding: 15px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.button--bigger {
+    padding: 20px 40px;
+    border-radius: 30px;
+    font-weight: bold;
 }
 
 /*Todas las propiedades del div con el contacto y las redes sociales*/
@@ -52,7 +89,6 @@ body {
     color: var(--color-azul-oscuro);
     font-size: 1.3rem;
     text-decoration: none;
-    font-family: "Roboto", sans-serif;
 }
 
 .header__contact-icon {
@@ -109,9 +145,8 @@ body {
 }
 
 .nav__title {
-    font-family: "Roboto", sans-serif;
     font-size: 3rem;
-    color: #107;
+    color: var(--color-azul-oscuro);
 }
 
 /*Todas las propiedades de la lista que contiene las opciones del nav*/
@@ -125,8 +160,7 @@ body {
 }
 
 .nav__item {
-    margin: 0 15px;
-    font-family: "Roboto", sans-serif;
+    margin: 0 1.5rem;
 }
 
 .nav__link {
@@ -145,6 +179,30 @@ body {
 
 .nav__menu-button {
     display: none;
+}
+
+/*Todas las propiedades del boton de Whatsapp*/
+
+.whastapp {
+    position: fixed;
+    bottom: 3.5rem;
+    right: 3.5rem;
+    z-index: 200;
+}
+
+.whastapp__button {
+    text-decoration: none;
+    text-align: center;
+}
+
+.whatsapp__icon {
+    width: 7rem;
+    height: 7rem;
+    padding: 1.3rem;
+    color: var(--color-blanco);
+    background: var(--color-whatsapp);
+    border-radius: 50%;
+    font-size: 4rem;
 }
 
 /*Todas las propiedades del indice final*/
@@ -176,7 +234,7 @@ body {
 
 .index__item {
     padding: 1rem 0;
-    border-bottom: 0.1rem solid #888;
+    border-bottom: 0.1rem solid var(--color-gris);
 }
 
 .index__item--borderless {
@@ -185,8 +243,7 @@ body {
 
 .index__link {
     text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    color: #f50;
+    color: var(--color-naranja-alt);
     letter-spacing: 0.1rem;
     font-size: 1.7rem;
     transition: color 0.5s;
@@ -206,14 +263,12 @@ body {
 
 .footer__programador-text {
     color: var(--color-blanco);
-    font-family: "Roboto", sans-serif;
     font-size: 17px;
 }
 
 .footer__link {
     color: var(--color-fondo);
     text-decoration: none;
-    font-family: "Roboto", sans-serif;
     font-size: 17px;
     padding: 0 2rem;
 }
@@ -248,17 +303,12 @@ body {
 
 @media screen and (max-width: 860px) {
 
-    html {
+    :root {
         font-size: 50%;
     }
 
     .header__contact {
         display: none;
-    }
-
-    .button {
-        font-size: 2.3rem;
-        padding: 0.7rem 4rem;
     }
 
     .header__info {

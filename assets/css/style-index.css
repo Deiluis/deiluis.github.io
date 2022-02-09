@@ -15,42 +15,12 @@
 h2 {
     text-align: center;
     padding: 3rem;
-    font-family: "Roboto", sans-serif;
     font-size: 5rem;
     color: var(--color-negro);
 }
 
 h3 {
-    font-family: "Roboto", sans-serif;
     color: var(--color-negro);
-}
-
-p {
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-}
-
-.button {
-    background-color: var(--color-naranja-claro);
-    color: var(--color-blanco);
-    text-decoration: none;
-    align-self: center;
-    font-size: 1.7rem;
-    font-family: "Roboto", sans-serif;
-    padding: 0.7rem 2rem;
-    border-radius: 2rem;
-    border: none;
-    transition: background-color 0.5s;
-}
-
-.button:hover {
-    background: var(--color-naranja-alt);
-}
-
-.button--larger {
-    padding: 1.5rem 2rem;
-    border-radius: 2.5rem;
-    font-weight: bold;
 }
 
 /*Todas las propiedades de la imagen principal*/
@@ -97,6 +67,7 @@ p {
 }
 
 .niveles__text {
+    text-align: center;
     font-size: 1.7rem;
     line-height: 1.5;
     letter-spacing: 0.1rem;
@@ -181,7 +152,6 @@ p {
 }
 
 .novedades__subtitle {
-    font-family: "Roboto", sans-serif;
     font-size: 1.7rem;
     color: var(--color-negro);
 }
@@ -240,11 +210,11 @@ p {
 }
 
 .contacto__form-item {
+    background: var(--color-blanco);
     padding: 2rem;
     border-radius: 1rem;
     outline: none;
     border: none;
-    font-family: "Roboto", sans-serif;
     font-size: 1.7rem;
 }
 
@@ -283,7 +253,6 @@ p {
     color: var(--color-negro);
     font-size: 1.7rem;
     letter-spacing: 0.1rem;
-    font-family: "Roboto", sans-serif;
 }
 
 .contacto__info-icon {
@@ -295,7 +264,6 @@ p {
     font-size: 1.7rem;
     letter-spacing: 0.1rem;
     text-decoration: none;
-    font-family: "Roboto", sans-serif;
     transition: color 0.5s;
 }
 
@@ -348,7 +316,7 @@ p {
 
 
 
-
+/*Media queries*/
 
 @media screen and (max-width: 1249px) {
     .novedades__item {
@@ -357,20 +325,10 @@ p {
 }
 
 @media screen and (max-width: 860px) {
-    
-    .button {
-        padding: 1rem 2.5rem;
-        border-radius: 2.5rem;
-        font-size: 1.9rem;
-    }
-
-    .button--larger {
-        padding: 2rem 2.5rem;
-        border-radius: 3rem;
-    }
 
     .niveles__text {
         font-size: 1.85rem;
+        padding: 0 1.5rem;
     }
 
     .niveles__item {
