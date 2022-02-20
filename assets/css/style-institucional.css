@@ -33,6 +33,7 @@ p {
     flex-direction: column;
     align-items: center;
     background: var(--color-blanco);
+    padding: 2rem 0;
 }
 
 .mision-valores {
@@ -49,13 +50,11 @@ p {
     height: 7rem;
     background: var(--color-fondo);
 
-    margin: 2rem 0;
-    /*sacar margin-bot al abrir*/
     border-radius: 20px;
 
     justify-content: flex-start;
     align-items: center;
-    transition: background 0.5s;
+    transition: 0.5s background 0s;
 }
 
 .show-button:hover {
@@ -81,26 +80,25 @@ p {
     margin-bottom: 0;
 }
 
-/*Todas las propiedades de la sección de misión y valores*/
-
-.mision-valores__container {
-    position: absolute;
-    top: -40rem;
-    z-index: -1;
-
-    display: none;
+.mision-valores__container,
+.historia__container,
+.identidad__container {
+    display: flex;
     width: 110rem;
+    height: 0;
+    overflow: hidden;
     background: var(--color-gris-e);
     border-radius: 0 0 20px 20px;
-    transition: top 0.5s;
+    transition: height 1s;
 }
 
-.mision-valores__container--show {
-    position: relative;
-    top: 0;
-    z-index: 5;
-    display: flex;
+.mision-valores__container--show,
+.historia__container--show,
+.identidad__container--show {
+    height: auto;
 }
+
+/*Todas las propiedades de la sección de misión y valores*/
 
 .mision-valores__text-container {
     margin: 3rem;
@@ -112,25 +110,6 @@ p {
 
 /*Todas las propiedades de la sección de historia*/
 
-.historia__container {
-    position: absolute;
-    top: 0;
-    z-index: -1;
-
-    display: none;
-    width: 110rem;
-    background: var(--color-gris-e);
-    border-radius: 0 0 20px 20px;
-    transition: top 0.5s;
-}
-
-.historia__container--show {
-    position: relative;
-    top: 0;
-    z-index: 5;
-    display: flex;
-}
-
 .historia__text-container {
     margin: 3rem;
 }
@@ -139,33 +118,19 @@ p {
     margin: 1.3rem 0 3rem 0; 
 }
 
-.galeria {
-    width: 40rem;
+/*Todas las propiedades del slider de fotos*/
+
+.slider {
+    width: 300%;
+    height: 20rem;
     margin: 3rem;
-    border-radius: 3rem;
-    align-self: center;
-    object-fit: cover;
+}
+
+.slider__container {
+    width: 500%;
 }
 
 /*Todas las propiedades de la sección de identidad*/
-
-.identidad__container {
-    position: absolute;
-    top: 15rem;
-    z-index: -1;
-
-    display: none;
-    width: 110rem;
-    background: var(--color-gris-e);
-    border-radius: 0 0 20px 20px;
-}
-
-.identidad__container--show {
-    position: relative;
-    top: 0;
-    z-index: 5;
-    display: flex;
-}
 
 .identidad__text {
     margin: 4.3rem 3rem 6rem 3rem; 
@@ -191,6 +156,11 @@ p {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .slider {
+        width: 50%;
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 860px) {
@@ -202,13 +172,49 @@ p {
     .mision-valores__container{
         flex-wrap: wrap;
     }
+
+    .footer {
+        min-height: 35vh;
+    }
     
+}
+
+@media screen and (max-width: 600px) {
+
+    .slider {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 420px) {
 
-    .galeria {
+    .slider {
         width: 80%;
+        height: 25rem;
+    }
+    
+}
+
+@media screen and (min-height: 800px) {
+
+    .mision-valores {
+        padding-top: 9vh;
+    }
+    
+    .identidad {
+        padding-bottom: 9vh;
+    }
+    
+}
+
+@media screen and (min-height: 1000px) {
+
+    .mision-valores {
+        padding-top: 13vh;
+    }
+    
+    .identidad {
+        padding-bottom: 13vh;
     }
     
 }

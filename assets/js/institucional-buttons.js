@@ -10,44 +10,62 @@ const identidadContainer = document.querySelector(".identidad__container");
 const identidadShowButton = document.querySelector(".identidad__show-button");
 const identidadIcon = document.querySelector(".identidad__icon");
 
-misionValoresShowButton.onclick = () => {
-    misionValoresContainer.classList.toggle("mision-valores__container--show");
+misionValoresShowButton.addEventListener("click", () => {
     misionValoresShowButton.classList.toggle("mision-valores__show-button--active");
     misionValoresIcon.classList.toggle("fa-times-circle");
 
-    historiaContainer.classList.remove("historia__container--show");
-    historiaShowButton.classList.remove("historia__show-button--active");
-    historiaIcon.classList.remove("fa-times-circle");
+    const height = misionValoresContainer.scrollHeight;
 
-    identidadContainer.classList.remove("identidad__container--show");
-    identidadShowButton.classList.remove("identidad__show-button--active");
-    identidadIcon.classList.remove("fa-times-circle");
-}
+    if(misionValoresContainer.classList.contains("desplegar")) {
+        misionValoresContainer.classList.remove("desplegar");
+        misionValoresContainer.removeAttribute("style");
 
-historiaShowButton.onclick = () => {
-    historiaContainer.classList.toggle("historia__container--show");
+        misionValoresShowButton.style.transition = "0s border-radius 0s, 0.5s background"
+
+    } else {
+        misionValoresContainer.classList.add("desplegar");
+        misionValoresContainer.style.height = height + 25 + "px";
+
+        misionValoresShowButton.style.transition = "1s border-radius 0.5s, 0.5s background"
+    }
+});
+
+historiaShowButton.addEventListener("click", () => {
     historiaShowButton.classList.toggle("historia__show-button--active");
     historiaIcon.classList.toggle("fa-times-circle");
 
-    misionValoresContainer.classList.remove("mision-valores__container--show");
-    misionValoresShowButton.classList.remove("mision-valores__show-button--active");
-    misionValoresIcon.classList.remove("fa-times-circle");
+    const height = historiaContainer.scrollHeight;
 
-    identidadContainer.classList.remove("identidad__container--show");
-    identidadShowButton.classList.remove("identidad__show-button--active");
-    identidadIcon.classList.remove("fa-times-circle");
-}
+    if(historiaContainer.classList.contains("desplegar")) {
+        historiaContainer.classList.remove("desplegar");
+        historiaContainer.removeAttribute("style");
 
-identidadShowButton.onclick = () => {
-    identidadContainer.classList.toggle("identidad__container--show");
+        historiaShowButton.style.transition = "0s border-radius 0s, 0.5s background"
+
+    } else {
+        historiaContainer.classList.add("desplegar");
+        historiaContainer.style.height = height + 25 + "px";
+
+        historiaShowButton.style.transition = "1s border-radius 0.5s, 0.5s background"
+    }
+});
+
+identidadShowButton.addEventListener("click", () => {
     identidadShowButton.classList.toggle("identidad__show-button--active");
     identidadIcon.classList.toggle("fa-times-circle");
 
-    misionValoresContainer.classList.remove("mision-valores__container--show");
-    misionValoresShowButton.classList.remove("mision-valores__show-button--active");
-    misionValoresIcon.classList.remove("fa-times-circle");
+    const height = identidadContainer.scrollHeight;
 
-    historiaContainer.classList.remove("historia__container--show");
-    historiaShowButton.classList.remove("historia__show-button--active");
-    historiaIcon.classList.remove("fa-times-circle");
-}
+    if(identidadContainer.classList.contains("desplegar")) {
+        identidadContainer.classList.remove("desplegar");
+        identidadContainer.removeAttribute("style");
+
+        identidadShowButton.style.transition = "0s border-radius 0s, 0.5s background"
+
+    } else {
+        identidadContainer.classList.add("desplegar");
+        identidadContainer.style.height = height + 25 + "px";
+
+        identidadShowButton.style.transition = "1s border-radius 0.5s, 0.5s background"
+    }
+});

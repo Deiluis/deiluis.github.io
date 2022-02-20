@@ -1,97 +1,191 @@
-function validarFormulario() {
+const form = document.querySelector("#form");
 
-    $('.alert').remove();
+form.addEventListener("submit", (e) => {
 
-    var nombre=$('#nombre').val();
-    var email=$('#email').val();
-    var tel=$('#tel').val();
-    var asunto=$('#asunto').val();
-    var mensaje=$('#mensaje').val();
-
-    if(nombre == "" || nombre == null) {
-        cambiarColor("nombre");
-        mostrarAlerta("Campo Obligatorio");
-        return false;
-    } else {
-        var expresion= /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
-        if(!expresion.test(nombre)) {
-            cambiarColor("nombre");
-            mostrarAlerta("No se permiten caracteres especiales o numeros")
-        }
-    }
-
-    if(email == "" || email == null) {
-        cambiarColor("email");
-        mostrarAlerta("Campo Obligatorio");
-        return false;
-    } else {
-        var expresion= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-        if(!expresion.test(email)) {
-            cambiarColor("email");
-            mostrarAlerta("Por favor ingrese un correo válido");
-            return false;
-        }
-    }
-
+    //Evita que se envie el fomrulario al darle click.
+    e.preventDefault();
     
-    if(asunto == "---" || asunto == null) {
+    //Si el formulario es valido, se muestra el loader y se permite el envío.
+    if (validarFormulario()) {
+        loader.classList.remove("loader--hide");
+        form.submit();
+    }
+
+});
+
+const nombreInput = document.querySelector("#nombre");
+const emailInput = document.querySelector("#email");
+const asuntoInput = document.querySelector("#asunto");
+const telefonoInput = document.querySelector("#telefono");
+const opcionesInput = document.querySelector("#opciones");
+const mensajeInput = document.querySelector("#mensaje");
+const recaptcha = document.querySelector("#recaptcha");
+
+const validarFormulario = () => {
+
+    //Se inicializa como true, en caso de que alguna validación falle, se cambia a false.
+    let formularioValido = true;
+
+    const nombre = nombreInput.value
+    const email = emailInput.value
+    const asunto = asuntoInput.value
+    const telefono = telefonoInput.value
+    const opciones = opcionesInput.value
+    const mensaje = mensajeInput.value
+
+    //Validación del nombre:
+    if (nombre == "" || nombre == null) {
+        mostrarAlerta("nombre", "Escriba su nombre");
+        cambiarColor("nombre");
+        formularioValido = true;
+
+    } else {
+        //La expresión indica que solo puede contener letras.
+        let expresion = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*$/;
+
+        if(!expresion.test(nombre)) {
+            mostrarAlerta("nombre", "No se permiten caracteres especiales o números");
+            cambiarColor("nombre");
+            formularioValido = false;
+
+        } else {
+            eliminarAlerta("nombre");
+            reestablecerColor("nombre");
+        }
+    }
+
+    //Validación del email:
+    if (email == "" || email == null) {
+        mostrarAlerta("email", "Escriba su email");
+        cambiarColor("email");
+        formularioValido = false;
+
+    } else {
+        //La expresión indica que no puede contener caracteres que no sean letras, números, puntos, o arrobas.
+        let expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+
+        if(!expresion.test(email)) {
+            mostrarAlerta("email", "El email no es valido");
+            cambiarColor("email");
+            formularioValido = false;
+
+        } else {
+            eliminarAlerta("email");
+            reestablecerColor("email");
+        }
+    }
+
+    //Validación del asunto:
+    if (asunto == "" || asunto == null) {
+        mostrarAlerta("asunto", "Escriba el asunto");
         cambiarColor("asunto");
-        mostrarAlerta("Seleccione una opción");
-        return false;
+        formularioValido = false;
+
     } else {
-        var expresion= /[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]*$/;
+        //La expresión indica que solo puede contener letras o números.
+        let expresion = /[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]*$/;
+
         if(!expresion.test(asunto)) {
+            mostrarAlerta("asunto", "No se permiten caracteres especiales");
             cambiarColor("asunto");
-            mostrarAlerta("Elija un asunto");
-            return false;
+            formularioValido = false;
+
+        } else {
+            eliminarAlerta("asunto");
+            reestablecerColor("asunto");
         }
     }
 
-    if(mensaje == "" || mensaje == null) {
-        cambiarColor("mensaje");
-        mostrarAlerta("Campo Obligatorio");
-        return false;
+    //En caso de que se introduzca un número de telefóno, se valida:
+    if (telefono.length > 0) {
+
+        //La expresión indica que solo puede contener números.
+        let expresion = /^[0-9]*$/;
+
+        if(!expresion.test(telefono)) {
+            mostrarAlerta("telefono", "Solo se permiten números");
+            cambiarColor("telefono");
+            formularioValido = false;
+
+        } else {
+            eliminarAlerta("telefono");
+            reestablecerColor("telefono");
+        }
+
+    } 
+    
+    //En caso de que se elimine el número de telefóno, también se elimina la alerta.
+    else {
+            eliminarAlerta("telefono");
+            reestablecerColor("telefono");
+    }
+
+    //Validación del select para elegir el área a consultar:
+    if (opciones == "placeholder") {
+        mostrarAlerta("opciones", "Elija el área a contactar");
+        cambiarColor("opciones");
+        formularioValido = false;
+
     } else {
-        var expresion= /[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]*$/;
+        eliminarAlerta("opciones");
+        reestablecerColor("opciones");
+    }
+
+    //Validación del mensaje:
+    if(mensaje == "" || mensaje == null) {
+        mostrarAlerta("mensaje", "Escriba su mensaje");
+        cambiarColor("mensaje");
+        formularioValido = false;
+
+    } else {
+        //La expresión indica que solo puede contener letras o números.
+        let expresion= /[,\\.\\a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]*$/;
+
         if(!expresion.test(mensaje)) {
+            mostrarAlerta("mensaje", "No se permiten caracteres especiales");
             cambiarColor("mensaje");
-            mostrarAlerta("No se permiten caracteres especiales");
-            return false;
+            formularioValido = false;
+
+        } else {
+            eliminarAlerta("mensaje");
+            reestablecerColor("mensaje");
         }
     }
 
-    var response = grecaptcha.greResponse();
-    if(response.length != 0)
-        window.open()
+    //Validación del captcha:
+    let response = grecaptcha.getResponse();
 
-    $('form').submit();
-    return true;
+    if(response.length != 0) {
+        eliminarAlerta("recaptcha");
+
+    } else {
+        mostrarAlerta("recaptcha", "Se debe completar el reCaptcha");
+        formularioValido = false;
+    }
+
+    return formularioValido;
 }
 
-$('input').focus(function(){
-    $('.alert').remove();
-    colorDefault('nombre');
-    colorDefault('email');
-    colorDefault('asunto');
-});
+//Funciones para cuando los campos son incorrectos o estan vacíos:
 
-$('textarea').focus(function(){
-    $('.alert').remove();
-    colorDefault('mensaje');
-});
+const mostrarAlerta = (elemento, mensajeDeAlerta) => {
+    elementoDeAlerta = document.querySelector(".contacto__form-error--" + elemento);
+    elementoDeAlerta.innerHTML = mensajeDeAlerta;
+} 
 
-function colorDefault(dato) {
-    $('#' + dato).css({
-        border: "1px solid #999"
-    });
+const cambiarColor = (elemento) => {
+    elemento = document.querySelector("#" + elemento);
+    elemento.style.transition = "outline 0.3s";
+    elemento.style.outline = "1px solid #c81f13";
 }
 
-function cambiarColor(dato) {
-    $('#' + dato).css({
-        border: "1px solid #dd5144"
-    });
+const eliminarAlerta = (elemento) => {
+    elementoDeAlerta = document.querySelector(".contacto__form-error--" + elemento);
+    elementoDeAlerta.innerHTML = "";
 }
 
-function mostrarAlerta(texto) {
-    $('#nombre').before('<div class="alert">Error: '+ texto +'</div>');
-};
+const reestablecerColor = (elemento) => {
+    elemento = document.querySelector("#" + elemento);
+    elemento.style.outline = "none";
+}
+

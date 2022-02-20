@@ -32,6 +32,62 @@ body {
     outline: none;
 }
 
+/*Todas las propiedades del loader*/
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--color-amarillo) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.loader {
+    background: var(--color-fondo);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    z-index: 1000;
+}
+
+.loader--hide {
+    display: none;
+}
+
+/*Propiedades generales de los botones y sus variaciones*/
+
 .button {
     background-color: var(--color-naranja-claro);
     color: var(--color-blanco);
@@ -54,10 +110,80 @@ body {
     font-weight: bold;
 }
 
+.button--wider {
+    padding: 15px 50px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
 .button--bigger {
     padding: 20px 40px;
     border-radius: 30px;
     font-weight: bold;
+}
+
+/*Todas las propiedades de los slider de fotos*/
+
+.slider {
+    border-radius: 3rem;
+    align-self: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider__container {
+    display: flex;
+    height: 100%;
+    margin-left: -100%;
+}
+
+.slider__section {
+    width: 100%;
+}
+
+.slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider__button {
+    display: flex;
+
+    color: var(--color-blanco);
+    opacity: 0.7;
+
+    width: 9rem;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3.5rem;
+
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    transition: opacity 0.3s;
+}
+
+.slider__button:hover {
+    opacity: 1;
+}
+
+.slider__button--left {
+    left: 0;
+    background: linear-gradient(to right, var(--color-negro), transparent);
+}
+
+.slider__button--right {
+    right: 0;
+    background: linear-gradient(to left, var(--color-negro), transparent);
 }
 
 /*Todas las propiedades del div con el contacto y las redes sociales*/
@@ -155,18 +281,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin: 0 1.5rem 2rem 1.5rem;
+    margin: 0 1.5rem;
     align-items: flex-end;
 }
 
 .nav__item {
-    margin: 0 1.5rem;
+    margin: 1.5rem;
 }
 
 .nav__link {
     text-decoration: none;
     color: var(--color-azul-oscuro);
-    padding: 0.2rem;
     font-size: 1.7rem;
     font-weight: bold;
     transition: color, border-bottom, 0.2s;
@@ -179,6 +304,47 @@ body {
 
 .nav__menu-button {
     display: none;
+}
+
+.nav__item--submenu {
+    position: relative;
+}
+
+.nav__submenu {
+    list-style: none;
+    width: 20rem;
+    padding: 1.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+
+    position: absolute;
+    left: -5rem;
+
+    margin-top: 20%;
+
+    z-index: 0;
+    transition: opacity, visibility, marign-top, 0.5s;
+}
+
+.nav__submenu-item {
+    background: var(--color-gris-e);
+    text-align: center;
+}
+
+.nav__item--submenu:hover > .nav__submenu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+}
+
+.nav__submenu .nav__link {
+    display: block;
+    padding: 1.5rem 0;
+}
+
+.nav__submenu .nav__link:hover {
+    border: none;
+    background: var(--color-blanco);
 }
 
 /*Todas las propiedades del boton de Whatsapp*/
@@ -326,6 +492,7 @@ body {
     .nav {
         flex-wrap: nowrap;
         box-shadow: none;
+        position: relative;
     }
 
     .nav__repsonsive-div {
@@ -356,14 +523,31 @@ body {
         justify-content: space-evenly;
         
 
+        margin-top: -75%;
         position: absolute;
-        top: -40vh;
+        
         z-index: 10;
-        transition: top 1s;
+        transition: margin-top 1s;
     }
 
     .nav__options-bar--show {
-        top: 18rem;
+        margin-top: 11rem;
+    }
+
+    .nav__submenu {
+        width: 100%;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        overflow: hidden;
+        visibility: visible;
+    
+        position: relative;
+        left: 0;
+    
+        z-index: 0;
+        transition: height 0.5s;
     }
 
     .nav__item {
@@ -389,7 +573,7 @@ body {
 
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 710px) {
 
     .footer {
         flex-direction: column;
@@ -399,6 +583,14 @@ body {
     .footer__info-extra,
     .footer__data-fiscal {
         margin: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .slider {
+        width: 90%;
+        height: 50%;
     }
 }
 
@@ -412,7 +604,7 @@ body {
 @media screen and (max-width: 335px) {
 
     .nav__options-bar--show {
-        top: 21rem
+        margin-top: 14.4rem;
     }
 
     .footer__info-extra {
@@ -430,25 +622,6 @@ body {
 @media screen and (max-width: 313px) {
     
     .nav__options-bar--show {
-        top: 25rem
-    }
-}
-
-@media screen and (max-width: 860px) and (orientation: landscape) {
-
-    .nav__options-bar {
-        display: inline-block;
-    }
-
-    .nav__item {
-        float: left;
-        padding: 0;
-        margin: 0;
-        width: 50%;
-    }
-
-    .nav__link {
-        display: inline-block;
-        width: 100%;
+        margin-top: 17.9rem;
     }
 }

@@ -1,0 +1,25 @@
+.main-info {
+    margin-top: 6rem;
+    width: 100%;
+    height: 40rem;
+    background: var(--color-blanco);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+}
+
+.main-info__title {
+    font-size: 4rem;
+}
+
+.main-info__text {
+    font-size: 1.8rem;
+}
+
+.main-info__title,
+.main-info__text {
+    text-align: center;
+    color: var(--color-negro);
+}
+

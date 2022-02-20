@@ -13,7 +13,7 @@ const next = () => {
     slider.style.marginLeft = "-200%";
     slider.style.transition = "margin-left 0.5s";
 
-    setTimeout(function(){
+    setTimeout(() => {
         slider.style.transition = "none";
         slider.insertAdjacentElement('beforeend', sliderSectionFirst);
         slider.style.marginLeft = "-100%";
@@ -34,14 +34,14 @@ const prev = () => {
     }, 500);
 }
 
-buttonRight.addEventListener('click', function(){
+buttonRight.addEventListener('click', () => {
     next();
 });
 
-buttonLeft.addEventListener('click', function(){
+buttonLeft.addEventListener('click', () => {
     prev();
 });
 
-setInterval(function() {
+setInterval(() => {
     next();
-}, 4500)
+}, 6500)
