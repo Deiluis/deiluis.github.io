@@ -188,4 +188,3 @@ const reestablecerColor = (elemento) => {
     elemento = document.querySelector("#" + elemento);
     elemento.style.outline = "none";
 }
-

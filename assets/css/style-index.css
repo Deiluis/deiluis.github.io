@@ -12,6 +12,8 @@
     --color-rojo: #c81f13;
 }
 
+/*Estilos generales para los headings del index*/
+
 h2 {
     text-align: center;
     padding: 3rem;
@@ -362,6 +364,8 @@ h3 {
     height: 60%;
     border: none;
 }
+
+/*Todas las propiedades de la barra final con las redes sociales*/
 
 .social-media {
     background-color: var(--color-blanco);

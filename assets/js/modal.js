@@ -9,10 +9,12 @@ const novedadesButtons = document.querySelectorAll(".novedades__link");
 const novedadesTitle = document.querySelectorAll(".novedades__subtitle");
 const novedadesImg = document.querySelectorAll(".novedades__img");
 
+//Añade un retraso a la aparición del modal, esto ayuda a acortar el tiempo de carga de la página.
 setTimeout(() => {
     modal.style.display = "flex";
 }, 3000);
 
+//Se le asigna el evento para mostrar el modal a todas las novedades:
 for(let i = 0; i < novedadesButtons.length; i++) {
 
     novedadesButtons[i].addEventListener("click", (e) => {
@@ -22,12 +24,14 @@ for(let i = 0; i < novedadesButtons.length; i++) {
     });
 }
 
+//Se le añade el evento al botón de cerra el modal.
 modalButton.addEventListener("click", (e) => {
     e.preventDefault();
     modal.classList.remove("modal--show");
     modalContainer.classList.remove("modal__container--show");
 });
 
+//Cada novedad modifica el modal entorno a su contenido. Se ponen por separado para poder editar el texto de los parrafos.
 novedadesButtons[0].addEventListener("click", () => {
     modalTitle.innerHTML = novedadesTitle[0].innerHTML;
     modalImg.setAttribute("src", novedadesImg[0].getAttribute("src"));

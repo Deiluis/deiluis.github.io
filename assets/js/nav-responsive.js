@@ -5,6 +5,8 @@ const subMenuBtn = document.querySelector(".nav__item--submenu");
 const subMenuLink = document.querySelector(".nav__link--submenu");
 const subMenu = document.querySelector(".nav__submenu");
 
+
+//Al dar click, se activa la clase que despliga el menu.
 menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle('fa-times');
     navBar.classList.toggle('nav__options-bar--show');
@@ -17,6 +19,7 @@ menuBtn.addEventListener("click", () => {
 
 window.addEventListener("scroll", () => {
 
+    //Se agrega este condicional para asegurar que menu responsive no se cierre en orientación landscape.
     if ((window.innerWidth < 860) &&
         (window.innerWidth < window.innerHeight)) {
         
@@ -30,8 +33,10 @@ window.addEventListener("scroll", () => {
     }  
 });
 
+//Al dar click, se activa la clase que despliga el submenu y reajusta su alto.
 subMenuBtn.addEventListener("click", () => {
 
+    //Se agrega este condicional para asegurar que el submenu se despliegue solo en responsive.
     if(window.innerWidth < 860) {
 
         const height = subMenu.scrollHeight;
@@ -40,6 +45,8 @@ subMenuBtn.addEventListener("click", () => {
             subMenu.classList.remove("desplegar");
             subMenu.removeAttribute("style");
         } else {
+
+            //Se agrega la clase "desplegar" para saber cuando el submenu esta desplegado.
             subMenu.classList.add("desplegar");
             subMenu.style.height = height + "px";
         }
@@ -47,6 +54,7 @@ subMenuBtn.addEventListener("click", () => {
     }
 });
 
+//Previene que el submenu nos mande a algún link y se cierre.
 subMenuLink.addEventListener("click", (e) => {
     e.preventDefault();
 });

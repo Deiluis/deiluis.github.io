@@ -11,6 +11,8 @@ const identidadShowButton = document.querySelector(".identidad__show-button");
 const identidadIcon = document.querySelector(".identidad__icon");
 
 misionValoresShowButton.addEventListener("click", () => {
+
+    //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     misionValoresShowButton.classList.toggle("mision-valores__show-button--active");
     misionValoresIcon.classList.toggle("fa-times-circle");
 
@@ -23,6 +25,8 @@ misionValoresShowButton.addEventListener("click", () => {
         misionValoresShowButton.style.transition = "0s border-radius 0s, 0.5s background"
 
     } else {
+
+        //Se añade la clase "desplegar" para identificar cuando el contenedor esta desplegado.
         misionValoresContainer.classList.add("desplegar");
         misionValoresContainer.style.height = height + 25 + "px";
 
@@ -31,6 +35,8 @@ misionValoresShowButton.addEventListener("click", () => {
 });
 
 historiaShowButton.addEventListener("click", () => {
+
+    //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     historiaShowButton.classList.toggle("historia__show-button--active");
     historiaIcon.classList.toggle("fa-times-circle");
 
@@ -43,6 +49,8 @@ historiaShowButton.addEventListener("click", () => {
         historiaShowButton.style.transition = "0s border-radius 0s, 0.5s background"
 
     } else {
+
+        //Se añade la clase "desplegar" para identificar cuando el contenedor esta desplegado.
         historiaContainer.classList.add("desplegar");
         historiaContainer.style.height = height + 25 + "px";
 
@@ -51,6 +59,8 @@ historiaShowButton.addEventListener("click", () => {
 });
 
 identidadShowButton.addEventListener("click", () => {
+
+    //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     identidadShowButton.classList.toggle("identidad__show-button--active");
     identidadIcon.classList.toggle("fa-times-circle");
 
@@ -63,6 +73,8 @@ identidadShowButton.addEventListener("click", () => {
         identidadShowButton.style.transition = "0s border-radius 0s, 0.5s background"
 
     } else {
+
+        //Se añade la clase "desplegar" para identificar cuando el contenedor esta desplegado.
         identidadContainer.classList.add("desplegar");
         identidadContainer.style.height = height + 25 + "px";
 

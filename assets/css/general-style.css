@@ -1,4 +1,7 @@
 :root {
+
+    /*La paleta de colores que se usara en toda la página*/
+
     --color-blanco: #fff;
     --color-gris-e: #eee;
     --color-fondo: #ddd;
@@ -25,11 +28,11 @@
     scroll-behavior: smooth;
 }
 
+/*Propiedades generales del body para toda la página*/
+
 body {
     background: var(--color-fondo);
     font-family: "Roboto", sans-serif;
-    border: none;
-    outline: none;
 }
 
 /*Todas las propiedades del loader*/
@@ -241,7 +244,8 @@ body {
     transform: translateY(-7px);
 }
 
-/*Todas las propiedades del nav base*/
+/*Todas las propiedades del nav*/
+
 .nav {
     display: flex;
     width: 100%;
@@ -258,7 +262,8 @@ body {
     justify-content: space-evenly;
 }
 
-/*Todas las propiedades del div que contiene al logo y el texto del ISFD*/
+/*Todas las propiedades del div que contiene al logo y el texto del ILFl*/
+
 .nav__logo-link {
     text-decoration: none;
     display: flex;
@@ -305,6 +310,8 @@ body {
 .nav__menu-button {
     display: none;
 }
+
+/*Todas las propiedades del submenu que se despliega en la opción "niveles"*/
 
 .nav__item--submenu {
     position: relative;
@@ -418,6 +425,8 @@ body {
 .index__link:hover {
     color: var(--color-rojo);
 }
+
+/*Todas las propiedades del footer*/
 
 .footer {
     display: flex;
