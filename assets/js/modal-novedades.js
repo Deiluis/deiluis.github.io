@@ -1,9 +1,9 @@
-const modal = document.querySelector(".modal");
-const modalContainer = document.querySelector(".modal__container");
-const modalImg = document.querySelector(".modal__img");
-const modalTitle = document.querySelector(".modal__title");
-const modalText = document.querySelector(".modal__text");
-const modalButton = document.querySelector(".modal__button");
+const modal = document.querySelector(".modal-novedades");
+const modalContainer = document.querySelector(".modal-novedades__container");
+const modalImg = document.querySelector(".modal-novedades__img");
+const modalTitle = document.querySelector(".modal-novedades__title");
+const modalText = document.querySelector(".modal-novedades__text");
+const modalCloseButton = document.querySelector(".modal-novedades__button");
 
 const novedadesButtons = document.querySelectorAll(".novedades__link");
 const novedadesTitle = document.querySelectorAll(".novedades__subtitle");
@@ -12,23 +12,23 @@ const novedadesImg = document.querySelectorAll(".novedades__img");
 //Añade un retraso a la aparición del modal, esto ayuda a acortar el tiempo de carga de la página.
 setTimeout(() => {
     modal.style.display = "flex";
-}, 3000);
+}, 1500);
 
 //Se le asigna el evento para mostrar el modal a todas las novedades:
 for(let i = 0; i < novedadesButtons.length; i++) {
 
     novedadesButtons[i].addEventListener("click", (e) => {
         e.preventDefault();
-        modal.classList.add("modal--show");
-        modalContainer.classList.add("modal__container--show");
+        modal.classList.add("modal-novedades--show");
+        modalContainer.classList.add("modal-novedades__container--show");
     });
 }
 
 //Se le añade el evento al botón de cerra el modal.
-modalButton.addEventListener("click", (e) => {
+modalCloseButton.addEventListener("click", (e) => {
     e.preventDefault();
-    modal.classList.remove("modal--show");
-    modalContainer.classList.remove("modal__container--show");
+    modal.classList.remove("modal-novedades--show");
+    modalContainer.classList.remove("modal-novedades__container--show");
 });
 
 //Cada novedad modifica el modal entorno a su contenido. Se ponen por separado para poder editar el texto de los parrafos.

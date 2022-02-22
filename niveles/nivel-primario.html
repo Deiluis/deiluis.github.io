@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="../assets/css/niveles-general-style.css">
         <link rel="stylesheet" type="text/css" href="../assets/css/style-nivel-primario.css">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/98a0d51c53.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/41b6154676.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -238,9 +238,20 @@
                 <div class="slider__button slider__button--right">
                     <i class="fas fa-chevron-right"></i>
                 </div>
+                <div class="slider__show-button">
+                    <i class="slider__show-icon fas fa-magnifying-glass-plus"></i>
+                </div>
 
             </div>
 
+        </section>
+
+        <!--Modal donde se muestran las fotos que se seleccionen del slider-->
+        <section class="modal-slider" id="modal-slider">
+            <div class="modal-slider__container">
+                <i class="modal-slider__button fas fa-xmark"></i>
+                <img src="../assets/img/example-image.jpg" alt="Imagen de una novedad retratada en el modal" class="modal-slider__img">
+            </div>
         </section>
 
         <!--Sección de información sobre los objetivos del nivel-->
@@ -410,6 +421,7 @@
 
         <script type="text/javascript" src="../assets/js/nav-responsive.js"></script>
         <script type="text/javascript" src="../assets/js/slider.js"></script>
+        <script type="text/javascript" src="../assets/js/modal-slider.js"></script>
         <script type="text/javascript" src="../assets/js/loader.js"></script>
     </body>
 

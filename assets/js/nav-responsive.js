@@ -8,7 +8,7 @@ const subMenu = document.querySelector(".nav__submenu");
 
 //Al dar click, se activa la clase que despliga el menu.
 menuBtn.addEventListener("click", () => {
-    menuBtn.classList.toggle('fa-times');
+    menuBtn.classList.toggle('fa-xmark');
     navBar.classList.toggle('nav__options-bar--show');
 
     if(subMenu.classList.contains("desplegar")) {
