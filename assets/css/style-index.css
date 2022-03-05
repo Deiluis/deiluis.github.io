@@ -111,12 +111,13 @@ h3 {
 
 .novedades__page {
     width: 100%;
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .novedades__item {
     display: inline-block;
-    margin: 0 4rem;
     width: 33rem;
     height: 40rem;
     border: 0.1rem var(--color-fondo) solid;
@@ -195,7 +196,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 250;
+    z-index: 4750;
 
     background: #2228;
     opacity: 0;

@@ -82,7 +82,7 @@ body {
     align-items: center;
 
     position: fixed;
-    z-index: 1000;
+    z-index: 5000;
 }
 
 .loader--hide {
@@ -100,6 +100,7 @@ body {
     padding: 7px 20px;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
     transition: background 0.5s;
 }
 
@@ -170,7 +171,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 5;
+    z-index: 1500;
 
     transition: opacity 0.3s;
 }
@@ -201,7 +202,7 @@ body {
     position: absolute;
 
     top: 0;
-    z-index: 3;
+    z-index: 1000;
     transition: background 0.5s;
 }
 
@@ -221,7 +222,7 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, -20%);
-    z-index: 3;
+    z-index: 1000;
 
     transition: transform 0.5s;
 }
@@ -244,7 +245,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 250;
+    z-index: 4750;
 
     background: #2228;
     opacity: 0;
@@ -294,7 +295,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 250;
+    z-index: 4800;
 
     transition: opacity 0.3s;
 }
@@ -315,7 +316,7 @@ body {
 
     position: relative;
     top: 0;
-    z-index: 30;
+    z-index: 4500;
 }
 
 .header__contact {
@@ -413,12 +414,11 @@ body {
     color: var(--color-azul-oscuro);
     font-size: 1.7rem;
     font-weight: bold;
-    transition: color, border-bottom, 0.2s;
+    transition: color 0.2s;
 }
 
 .nav__link:hover {
     color: var(--color-amarillo);
-    border-bottom: 0.3rem solid var(--color-amarillo);
 }
 
 .nav__menu-button {
@@ -444,7 +444,7 @@ body {
 
     margin-top: 20%;
 
-    z-index: 0;
+    z-index: 4000;
     transition: opacity, visibility, marign-top, 0.5s;
 }
 
@@ -475,7 +475,7 @@ body {
     position: fixed;
     bottom: 3.5rem;
     right: 3.5rem;
-    z-index: 200;
+    z-index: 3500;
 }
 
 .whastapp__button {
@@ -622,7 +622,7 @@ body {
         box-shadow: 0 0.05rem 1rem var(--color-negro);
 
         position: relative;
-        z-index: 20;
+        z-index: 4250;
     }
 
     .nav__menu-button {
@@ -630,6 +630,7 @@ body {
         align-self: center;
         font-size: 3.5rem;
         margin: 2.5rem;
+        color: var(--color-negro);
     }
 
     .nav__options-bar {
@@ -648,7 +649,7 @@ body {
         margin-top: -75%;
         position: absolute;
         
-        z-index: 10;
+        z-index: 4000;
         transition: margin-top 1s;
     }
 
@@ -668,7 +669,7 @@ body {
         position: relative;
         left: 0;
     
-        z-index: 0;
+        z-index: 4000;
         transition: height 0.5s;
     }
 

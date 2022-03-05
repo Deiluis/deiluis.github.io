@@ -14,7 +14,8 @@ misionValoresShowButton.addEventListener("click", () => {
 
     //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     misionValoresShowButton.classList.toggle("mision-valores__show-button--active");
-    misionValoresIcon.classList.toggle("fa-times-circle");
+    misionValoresIcon.classList.toggle("fa-minus-circle");
+    misionValoresIcon.classList.toggle("fa-plus-circle");
 
     const height = misionValoresContainer.scrollHeight;
 
@@ -38,7 +39,8 @@ historiaShowButton.addEventListener("click", () => {
 
     //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     historiaShowButton.classList.toggle("historia__show-button--active");
-    historiaIcon.classList.toggle("fa-times-circle");
+    historiaIcon.classList.toggle("fa-minus-circle");
+    historiaIcon.classList.toggle("fa-plus-circle");
 
     const height = historiaContainer.scrollHeight;
 
@@ -62,7 +64,8 @@ identidadShowButton.addEventListener("click", () => {
 
     //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     identidadShowButton.classList.toggle("identidad__show-button--active");
-    identidadIcon.classList.toggle("fa-times-circle");
+    identidadIcon.classList.toggle("fa-minus-circle");
+    identidadIcon.classList.toggle("fa-plus-circle");
 
     const height = identidadContainer.scrollHeight;
 
