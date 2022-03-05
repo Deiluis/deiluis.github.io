@@ -23,7 +23,7 @@ window.addEventListener("scroll", () => {
     if ((window.innerWidth < 860) &&
         (window.innerWidth < window.innerHeight)) {
         
-        menuBtn.classList.remove('fa-times');
+            menuBtn.classList.toggle('fa-xmark');
         navBar.classList.remove('nav__options-bar--show');
 
         if(subMenu.classList.contains("desplegar")) {
