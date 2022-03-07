@@ -12,6 +12,12 @@ const identidadIcon = document.querySelector(".identidad__icon");
 
 misionValoresShowButton.addEventListener("click", () => {
 
+    if (!misionValoresShowButton.classList.contains("mision-valores__show-button--active")) {
+        misionValoresIcon.style.transform = "rotate(0)";
+    } else {
+        misionValoresIcon.style.transform = "rotate(90deg)";
+    }
+
     //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     misionValoresShowButton.classList.toggle("mision-valores__show-button--active");
     misionValoresIcon.classList.toggle("fa-minus-circle");
@@ -37,6 +43,12 @@ misionValoresShowButton.addEventListener("click", () => {
 
 historiaShowButton.addEventListener("click", () => {
 
+    if (!historiaShowButton.classList.contains("historia__show-button--active")) {
+        historiaIcon.style.transform = "rotate(0)";
+    } else {
+        historiaIcon.style.transform = "rotate(90deg)";
+    }
+
     //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     historiaShowButton.classList.toggle("historia__show-button--active");
     historiaIcon.classList.toggle("fa-minus-circle");
@@ -61,6 +73,12 @@ historiaShowButton.addEventListener("click", () => {
 });
 
 identidadShowButton.addEventListener("click", () => {
+
+    if (!identidadShowButton.classList.contains("identidad__show-button--active")) {
+        identidadIcon.style.transform = "rotate(0)";
+    } else {
+        identidadIcon.style.transform = "rotate(90deg)";
+    }
 
     //Al dar click, se activa la clase que despliga el contenedor del texto y reajusta su alto.
     identidadShowButton.classList.toggle("identidad__show-button--active");

@@ -1,4 +1,5 @@
 const modal = document.querySelector(".modal-novedades");
+const modalBackground = document.querySelector(".modal-novedades__background");
 const modalContainer = document.querySelector(".modal-novedades__container");
 const modalImg = document.querySelector(".modal-novedades__img");
 const modalTitle = document.querySelector(".modal-novedades__title");
@@ -27,6 +28,11 @@ for(let i = 0; i < novedadesButtons.length; i++) {
 //Se le añade el evento al botón de cerra el modal.
 modalCloseButton.addEventListener("click", (e) => {
     e.preventDefault();
+    modal.classList.remove("modal-novedades--show");
+    modalContainer.classList.remove("modal-novedades__container--show");
+});
+
+modalBackground.addEventListener("click", () => {
     modal.classList.remove("modal-novedades--show");
     modalContainer.classList.remove("modal-novedades__container--show");
 });

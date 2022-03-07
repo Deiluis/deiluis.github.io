@@ -27,10 +27,13 @@ h3 {
 
 /*Todas las propiedades de la imagen principal*/
 
-.main-img__img {
+.main-img {
     width: 100%;
     height: 60vh;
-    object-fit: cover;
+    background-image: url(../img/ImgPrincipal.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /*Todas las propiedades de la seccion de niveles*/
@@ -208,6 +211,12 @@ h3 {
     opacity: 1;
     pointer-events: unset;
     transition: opacity 0.5s;
+}
+
+.modal-novedades__background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 .modal-novedades__container {
