@@ -1,3 +1,5 @@
+/*Propiedades generales para los headings de los niveles*/
+
 h2 {
     font-size: 4.5rem;
     color: var(--color-naranja-claro);
@@ -77,7 +79,6 @@ h3 {
 .info__subtitle {
     font-size: 3rem;
     color: var(--color-negro);
-    font-weight: 1;
 }
 
 .info__text {

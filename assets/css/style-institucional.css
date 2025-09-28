@@ -1,3 +1,5 @@
+/*Propiedades generales para los headings y los parrafos de la página*/
+
 h2 {
     color: var(--color-naranja-claro);
     font-size: 2rem;
@@ -26,6 +28,8 @@ p {
     color: var(--color-negro);
 }
 
+/*Propiedades de las 3 secciones principales de la página*/
+
 .mision-valores,
 .historia,
 .identidad {
@@ -43,6 +47,8 @@ p {
 .identidad {
     padding-bottom: 3rem;
 }
+
+/*Todas las propiedades del botón que posibilita abrir las secciones*/
 
 .show-button {
     display: flex;
@@ -67,6 +73,9 @@ p {
     font-size: 2.3rem;
     color: var(--color-naranja-oscuro-alt);
     transition: font-size 0.5s;
+
+    transform: rotate(90deg);
+    transition: transform 0.4s;
 }
 
 .show-button:hover > .icon {

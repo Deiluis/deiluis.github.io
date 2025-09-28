@@ -10,8 +10,9 @@
         <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="assets/css/general-style.css">
         <link rel="stylesheet" type="text/css" href="assets/css/style-institucional.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/98a0d51c53.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/41b6154676.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -24,11 +25,9 @@
         </div>
 
         <!--Empieza el header-->
-        
         <header class="header">
 
-            <!--Un div con algunos datos de contacto y redes sociales-->
-
+            <!--Div con datos de contacto y redes sociales-->
             <div class="header__info">
 
                 <ul class="header__contact">
@@ -84,15 +83,14 @@
 
             </div>
 
-            <!--Acá empieza el nav con las opciones para navegar por la página como también ir al campus-->
-
+            <!--Nav para navegar por la página-->
             <nav class="nav">
 
                 <div class="nav__repsonsive-div">
 
                     <div class="nav__logo">
                         <a class="nav__logo-link" href="index.html">
-                            <img class="nav__img" src="assets/img/logo.png" alt="Instituto Federico Leloir">
+                            <img class="nav__img" src="assets/img/logo.png" alt="Logo del Instituto Luis Federico Leloir, Instituto Luis Federico Leloir">
                             <h1 class="nav__title">Instituto Luis Federico Leloir</h1>
                         </a>
                     </div>
@@ -108,6 +106,26 @@
                     <li class="nav__item">
                         <a class="nav__link" href="institucional.html">INSTITUCIONAL</a>
                     </li>
+                    <li class="nav__item nav__item--submenu">
+                        <a class="nav__link nav__link--submenu" href="#">
+                            NIVELES <i class="nav__icon fas fa-angle-down"></i>
+                        </a>
+
+                        <ul class="nav__submenu">
+                            <li class="nav__submenu-item">
+                                <a href="niveles/nivel-inicial.html" class="nav__link">Nivel Inicial</a>
+                            </li>
+                            <li class="nav__submenu-item">
+                                <a href="niveles/nivel-primario.html" class="nav__link">Nivel Primario</a>
+                            </li>
+                            <li class="nav__submenu-item">
+                                <a href="niveles/nivel-secundario.html" class="nav__link">Nivel Secundario</a>
+                            </li>
+                            <li class="nav__submenu-item">
+                                <a href="#" class="nav__link">Consulta de vacantes</a>
+                            </li>
+                        </ul>
+
                     <li class="nav__item nav__item--submenu">
                         <a class="nav__link nav__link--submenu" href="#">
                             NIVELES <i class="nav__icon fas fa-angle-down"></i>
@@ -144,18 +162,19 @@
 
         </header>
 
-        <!--Termina el header-->
-
+        <!--Sección/Botón de Whatsapp-->
         <section class="whastapp">
             <a class="whastapp__button" href="https://api.whatsapp.com/send/?phone=5491123247745&text&app_absent=0" target="_BLANK">
                 <i class="whatsapp__icon fab fa-whatsapp"></i>
             </a>
         </section>
 
+        <!--Sección del título de la página-->
         <section class="titulo">
             <h2 class="titulo__title">Institucional</h2>
         </section>
 
+        <!--Sección de la misión y valores-->
         <section class="mision-valores" id="mision-valores">
 
             <div class="mision-valores__show-button show-button">
@@ -232,6 +251,7 @@
 
         </section>
 
+        <!--Sección de la historia-->
         <section class="historia" id="historia">
 
             <div class="historia__show-button show-button">
@@ -293,6 +313,16 @@
             
         </section>
 
+        <!--Modal donde se muestran las fotos que se seleccionen del slider-->
+        <section class="modal-slider" id="modal-slider">
+            <div class="modal-slider__background"></div>
+            <div class="modal-slider__container">
+                <i class="modal-slider__button fas fa-xmark"></i>
+                <img src="../assets/img/example-image.jpg" alt="Imagen de una novedad retratada en el modal" class="modal-slider__img">
+            </div>
+        </section>
+
+        <!--Sección de la historia-->
         <section class="identidad" id="identidad">
 
             <div class="identidad__show-button show-button">
@@ -320,18 +350,18 @@
 
         </section>
 
-        <!--Acá empieza una sección con un pequeño indice-->
-
+        <!--Índice final-->
         <section class="index" id="index">
 
             <div class="index__container">
     
                 <div class="index__logo">
                     <a class="index__logo-link" href="index.html">
-                        <img class="index__logo-img" src="assets/img/logo.png" alt="">
+                        <img class="index__logo-img" src="assets/img/logo.png" alt="Logo del Instituto Luis Federico Leloir, Instituto Luis Federico Leloir">
                     </a>
                 </div>
     
+                <!--Índice sobre los niveles-->
                 <div class="index__lists-container">
     
                     <h3 class="index__title">Niveles</h3>
@@ -353,6 +383,7 @@
     
                 </div>
     
+                <!--Índice sobre el apartado institucional-->
                 <div class="index__lists-container">
                     
                     <h3 class="index__title">Institucional</h3>
@@ -374,12 +405,14 @@
     
                 </div>
     
+                <!--Índice para conocer más sobre el ILFL, como también mandar el CV-->
                 <div class="index__lists-container">
     
                     <h3 class="index__title">Conocé el ILFL</h3>
     
                     <ul class="index__list">
                         <li class="index__item">
+                            <a class="index__link" href="https://www.instagram.com/institutoleloir_castelar/">Fotos</a>
                             <a class="index__link" href="https://www.instagram.com/institutoleloir_castelar/">Fotos</a>
                         </li>
                         <li class="index__item">
@@ -398,10 +431,8 @@
             </div>
     
         </section>
-    
-
-        <!--Acá empieza el footer de la pagina-->
-
+  
+        <!--Empieza el footer-->
         <footer class="footer">
             
             <div class="footer__programador">
@@ -415,7 +446,7 @@
                 <a class="footer__link" href="index.html#contacto">Contacto</a>
             </div>
             
-            <img class="footer__data-fiscal" src="assets/img/dataFiscal.png" alt="">
+            <img class="footer__data-fiscal" src="assets/img/dataFiscal.png" alt="Data fiscal">
 
         </footer>
 

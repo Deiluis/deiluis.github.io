@@ -1,4 +1,7 @@
 :root {
+
+    /*La paleta de colores que se usara en toda la página*/
+
     --color-blanco: #fff;
     --color-gris-e: #eee;
     --color-fondo: #ddd;
@@ -24,6 +27,8 @@
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
+
+/*Propiedades generales del body para toda la página*/
 
 body {
     background: var(--color-fondo);
@@ -97,6 +102,7 @@ body {
     padding: 7px 20px;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
     transition: background 0.5s;
 }
 
@@ -106,6 +112,12 @@ body {
 
 .button--larger {
     padding: 15px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.button--wider {
+    padding: 15px 50px;
     border-radius: 25px;
     font-weight: bold;
 }
@@ -198,7 +210,7 @@ body {
 
     position: relative;
     top: 0;
-    z-index: 30;
+    z-index: 4500;
 }
 
 .header__contact {
@@ -241,7 +253,8 @@ body {
     transform: translateY(-7px);
 }
 
-/*Todas las propiedades del nav base*/
+/*Todas las propiedades del nav*/
+
 .nav {
     display: flex;
     width: 100%;
@@ -258,7 +271,8 @@ body {
     justify-content: space-evenly;
 }
 
-/*Todas las propiedades del div que contiene al logo y el texto del ISFD*/
+/*Todas las propiedades del div que contiene al logo y el texto del ILFl*/
+
 .nav__logo-link {
     text-decoration: none;
     display: flex;
@@ -282,10 +296,12 @@ body {
     flex-wrap: wrap;
     list-style: none;
     margin: 0 1.5rem;
+    margin: 0 1.5rem;
     align-items: flex-end;
 }
 
 .nav__item {
+    margin: 1.5rem;
     margin: 1.5rem;
 }
 
@@ -294,12 +310,11 @@ body {
     color: var(--color-azul-oscuro);
     font-size: 1.7rem;
     font-weight: bold;
-    transition: color, border-bottom, 0.2s;
+    transition: color 0.2s;
 }
 
 .nav__link:hover {
     color: var(--color-amarillo);
-    border-bottom: 0.3rem solid var(--color-amarillo);
 }
 
 .nav__menu-button {
@@ -353,7 +368,7 @@ body {
     position: fixed;
     bottom: 3.5rem;
     right: 3.5rem;
-    z-index: 200;
+    z-index: 3500;
 }
 
 .whastapp__button {
@@ -419,6 +434,8 @@ body {
     color: var(--color-rojo);
 }
 
+/*Todas las propiedades del footer*/
+
 .footer {
     display: flex;
     justify-content: space-evenly;
@@ -459,13 +476,11 @@ body {
 
 /*Media queries*/
 
-@media screen and (min-width: 860px) {
-    .nav__menu-button {
-        display: none;
-        color: var(--color-blanco);
+@media screen and (max-width: 1200px) {
+    .modal-slider__container {
+        max-height: 60%;
     }
 }
-
 
 @media screen and (max-width: 860px) {
 
@@ -493,6 +508,7 @@ body {
         flex-wrap: nowrap;
         box-shadow: none;
         position: relative;
+        position: relative;
     }
 
     .nav__repsonsive-div {
@@ -500,7 +516,7 @@ body {
         box-shadow: 0 0.05rem 1rem var(--color-negro);
 
         position: relative;
-        z-index: 20;
+        z-index: 4250;
     }
 
     .nav__menu-button {
@@ -508,6 +524,7 @@ body {
         align-self: center;
         font-size: 3.5rem;
         margin: 2.5rem;
+        color: var(--color-negro);
     }
 
     .nav__options-bar {
@@ -523,6 +540,7 @@ body {
         justify-content: space-evenly;
         
 
+        margin-top: -75%;
         margin-top: -75%;
         position: absolute;
         
@@ -605,6 +623,7 @@ body {
 
     .nav__options-bar--show {
         margin-top: 14.4rem;
+        margin-top: 14.4rem;
     }
 
     .footer__info-extra {
@@ -622,6 +641,7 @@ body {
 @media screen and (max-width: 313px) {
     
     .nav__options-bar--show {
+        margin-top: 17.9rem;
         margin-top: 17.9rem;
     }
 }
