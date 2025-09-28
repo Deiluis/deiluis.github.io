@@ -47,65 +47,10 @@
 .slider {
     width: 70rem;
     height: 35rem;
-    border-radius: 3rem;
-    align-self: center;
-    overflow: hidden;
-    position: relative;
 }
 
 .slider__container {
-    display: flex;
     width: 500%;
-    height: 100%;
-    margin-left: -100%;
-}
-
-.slider__section {
-    width: 100%;
-}
-
-.slider__img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slider__button {
-    position: absolute;
-
-    color: var(--color-gris-e);
-    background: var(--color-naranja);
-    opacity: 0.7;
-
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    text-align: center;
-
-    font-size: 4rem;
-    font-family: monospace;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-
-    transition: opacity 0.3s;
-}
-
-.slider__button:hover {
-    opacity: 1;
-}
-
-.slider__button--left {
-    left: 1rem;
-}
-
-.slider__button--right {
-    right: 1rem;
 }
 
 /*Todas las propiedades de la sección de las cards con materias*/

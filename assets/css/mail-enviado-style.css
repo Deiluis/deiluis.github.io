@@ -1,0 +1,57 @@
+/*Todas las propiedades del heading y el texto que aparece luego de enviar el mail*/
+
+.main-info {
+    margin-top: 6rem;
+    width: 100%;
+    height: 40rem;
+    background: var(--color-blanco);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+}
+
+.main-info__title {
+    font-size: 4rem;
+}
+
+.main-info__text {
+    font-size: 1.8rem;
+}
+
+.main-info__title,
+.main-info__text {
+    text-align: center;
+    color: var(--color-negro);
+}
+
+/*Media queries*/
+
+@media screen and (max-width: 860px) {
+
+    .main-info {
+        margin: 10vh 0;
+    }
+
+    .footer {
+        min-height: 35vh;
+    }
+    
+}
+
+@media screen and (min-height: 1000px) {
+
+    .main-info {
+        margin: 10vh 0;
+    }
+    
+}
+
+@media screen and (min-height: 1100px) {
+
+    .main-info {
+        margin: 13vh 0;
+    }
+    
+}
+

@@ -1,3 +1,5 @@
-window.onload = () => {
-    console.log("hola");
-}
+const loader = document.querySelector(".loader");
+
+window.addEventListener("load", () => {
+    loader.classList.toggle("loader--hide");
+});

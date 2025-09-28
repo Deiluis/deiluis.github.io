@@ -26,9 +26,9 @@ const moverAPag2 = () => {
     buttonPag2.style.backgroundColor = "#d90";
 }
 
-buttonPag1.addEventListener("click", function() {
+buttonPag1.addEventListener("click", () => {
     moverAPag1();
 });
-buttonPag2.addEventListener("click", function() {
+buttonPag2.addEventListener("click", () => {
     moverAPag2();
 });
